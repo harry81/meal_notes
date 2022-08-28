@@ -7,21 +7,28 @@ class ProfilePage extends GetView<ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Obx(() => Text("profile ${c.count}")),
-          ElevatedButton(
-              onPressed: () {
-                c.increment();
-              },
-              child: Icon(Icons.add)),
-          ElevatedButton(
-              onPressed: () {
-                c.decrement();
-              },
-              child: Icon(Icons.remove)),
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+      ),
+      body: Container(
+        child: Center(
+          child: Column(
+            children: [
+              Obx(() => Text("profile ${c.count}")),
+              ElevatedButton(
+                  onPressed: () {
+                    c.increment();
+                  },
+                  child: Icon(Icons.add)),
+              ElevatedButton(
+                  onPressed: () {
+                    c.decrement();
+                  },
+                  child: Icon(Icons.remove)),
+            ],
+          ),
+        ),
       ),
     );
   }

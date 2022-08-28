@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_notes/pages/list_page.dart';
 import 'package:meal_notes/pages/profile_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int currentIndex = 0;
   final screens = [
-    Center(child: Text('Home', style: TextStyle(fontSize: 40))),
+    ListPage(),
     Center(child: Text('Person', style: TextStyle(fontSize: 40))),
     ProfilePage(),
   ];
@@ -28,9 +29,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: IndexedStack(
         index: currentIndex,
         children: screens,
@@ -45,8 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedFontSize: 16,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+              icon: Icon(Icons.list),
+              label: 'List',
               backgroundColor: Colors.grey),
           BottomNavigationBarItem(
               icon: Icon(Icons.chair),
