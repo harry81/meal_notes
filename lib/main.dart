@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:meal_notes/pages/add_page.dart';
 import 'package:meal_notes/pages/myhome_page.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +32,16 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // English, no country code
         Locale('ko', 'KR'), // Spanish, no country code
       ],
-      home: const MyHomePage(title: '현민 Demo Page'),
+      getPages: [
+        GetPage(name: '/', page: () => const MyHomePage(title: '현민 Demo Page')),
+        GetPage(
+          name: '/add',
+          page: () => AddPage(),
+          transition: Transition.rightToLeft,
+          transitionDuration: const Duration(milliseconds: 200),
+          curve: Curves.fastOutSlowIn,
+        )
+      ],
     );
   }
 }

@@ -15,5 +15,25 @@ class ListController extends GetxController {
         "삼겹살",
         "https://watermark.lovepik.com/photo/20211208/large/lovepik-japanese-style-grilled-pork-belly-picture_501605503.jpg",
         DateTime.utc(2015, 3, 4, 19, 30)),
+    Item(
+        "삼겹살",
+        "https://watermark.lovepik.com/photo/20211208/large/lovepik-japanese-style-grilled-pork-belly-picture_501605503.jpg",
+        DateTime.utc(2015, 3, 4, 19, 30)),
+    Item(
+        "삼겹살",
+        "https://watermark.lovepik.com/photo/20211208/large/lovepik-japanese-style-grilled-pork-belly-picture_501605503.jpg",
+        DateTime.utc(2015, 3, 4, 19, 30)),
+    Item(
+        "삼겹살",
+        "https://watermark.lovepik.com/photo/20211208/large/lovepik-japanese-style-grilled-pork-belly-picture_501605503.jpg",
+        DateTime.utc(2015, 3, 4, 19, 30)),
+    Item(
+        "삼겹살",
+        "https://watermark.lovepik.com/photo/20211208/large/lovepik-japanese-style-grilled-pork-belly-picture_501605503.jpg",
+        DateTime.utc(2015, 3, 4, 19, 30)),
+    Item(
+        "삼겹살",
+        "https://watermark.lovepik.com/photo/20211208/large/lovepik-japanese-style-grilled-pork-belly-picture_501605503.jpg",
+        DateTime.utc(2015, 3, 4, 19, 30)),
   ].obs;
 }

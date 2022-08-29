@@ -11,9 +11,18 @@ class ListPage extends GetView<ListController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView(
-        child: Obx(() => Column(
-            children: c.items.map((item) => ItemWidget(item: item)).toList())),
+      child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Get.toNamed('/add');
+          },
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        ),
+        body: SingleChildScrollView(
+          child: Obx(() => Column(
+              children: c.items.map((item) => ItemWidget(item: item)).toList())),
+        ),
       ),
     );
   }
@@ -65,16 +74,13 @@ class ItemWidget extends StatelessWidget {
                 ),
               )),
               margin: EdgeInsets.only(right: 2),
-              child: Container(
-                margin: EdgeInsets.all(8),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      '${this.item.title}',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
+              child: Center(
+                child: Text(
+                  '${this.item.title}',
+                  style: TextStyle(
+                      fontSize: 32,
+                      color: Colors.white70,
+                      backgroundColor: Colors.black.withOpacity(0)),
                 ),
               ),
             ),
@@ -101,7 +107,9 @@ class ItemWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Text(DateFormat("yy/mm/dd", "ko").format(this.item.created_at),
+                    Text(
+                        DateFormat("yy/mm/dd", "ko")
+                            .format(this.item.created_at),
                         style: GoogleFonts.lato()),
                   ],
                 ),
