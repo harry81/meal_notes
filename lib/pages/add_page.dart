@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:meal_notes/controllers/add_controller.dart';
 
 class AddPage extends GetView<AddController> {
+  final AddController c = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,56 +21,48 @@ class AddPage extends GetView<AddController> {
                   style: TextStyle(color: Colors.white70, fontSize: 24)))
         ],
       ),
-      body: AddBody(),
-    );
-  }
-}
-
-class AddBody extends StatelessWidget {
-  const AddBody({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(8),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Container(
-                  width: 64,
-                  height: 64,
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(4)),
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.all(2),
-                        child: Icon(Icons.camera),
-                      ),
-                      Text("0/10")
-                    ],
+      body: Container(
+        margin: EdgeInsets.all(8),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Container(
+                    width: 90,
+                    height: 90,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(4)),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(2),
+                          child: IconButton(
+                              onPressed: () async {
+                                c.detectCameras();
+                              }, icon: Icon(Icons.camera)),
+                        ),
+                        Text("0/10")
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter your username',
+            TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Enter your username',
+              ),
             ),
-          ),
-          Center(
-            child: Text('hi'),
-          ),
-        ],
+            Center(
+              child: Text('hi'),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:meal_notes/controllers/add_controller.dart';
 import 'package:meal_notes/pages/add_page.dart';
 import 'package:meal_notes/pages/myhome_page.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -37,6 +40,9 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/add',
           page: () => AddPage(),
+          binding: BindingsBuilder((){
+            Get.lazyPut<AddController>(() => AddController());
+          }),
           transition: Transition.rightToLeft,
           transitionDuration: const Duration(milliseconds: 200),
           curve: Curves.fastOutSlowIn,
